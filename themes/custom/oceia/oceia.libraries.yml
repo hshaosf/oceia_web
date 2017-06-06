@@ -1,0 +1,12 @@
+global-styling:
+  version: 1.x
+  css:
+    theme:
+      assets/toolkit.css: {}
+      assets/oceia.css: {}
+global-scripts:
+  version: 1.x
+  js:
+    js/oceia.js: {}
+  dependencies:
+    - core/jquery
