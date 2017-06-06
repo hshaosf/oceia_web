@@ -1,0 +1,6 @@
+<?php
+
+function oceia_preprocess(&$variables, $hook)
+{
+    $variables['base_path'] = base_path();
+}
