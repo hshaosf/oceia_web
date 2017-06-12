@@ -1,0 +1,22 @@
+uuid: 5b0684eb-3a0e-46af-842b-00827d59c243
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - oceia
+_core:
+  default_config_hash: oXUb3JZR2WW5VOdw4HrhRicCsq51mCgLfRyvheG68ck
+id: oceia_breadcrumbs
+theme: oceia
+region: header
+weight: 0
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  provider: system
+  label_display: '0'
+visibility: {  }
