@@ -1,0 +1,22 @@
+uuid: d76b39e9-181b-4931-9108-802f722aaab9
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - oceia
+_core:
+  default_config_hash: jQQUUWN2Uxr5qZtc9zcJKBCxpKY8orN1u2HPqYYRQDI
+id: oceia_powered
+theme: oceia
+region: footer
+weight: -6
+provider: null
+plugin: system_powered_by_block
+settings:
+  id: system_powered_by_block
+  label: 'Powered by Drupal'
+  provider: system
+  label_display: '0'
+visibility: {  }
