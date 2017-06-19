@@ -6,6 +6,13 @@ base theme: classy
 libraries:
   - oceia/global-styling
   - oceia/global-scripts
+libraries-override:
+  core/jquery.ui:
+    css:
+      component: 
+        assets/vendor/jquery.ui/themes/base/core.css: false
+      theme: 
+        assets/vendor/jquery.ui/themes/base/theme.css: false
 regions:
   header: Header
   content: Content
