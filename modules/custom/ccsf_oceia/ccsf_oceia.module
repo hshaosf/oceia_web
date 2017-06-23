@@ -1,0 +1,10 @@
+<?php
+
+function ccsf_oceia_preprocess_node(&$variables) {
+  $node = $variables['node'];
+  if($node->getType() == 'result_page'){
+
+    $variables['resources'] = \Drupal::entityTypeManager()->getStorage('node')->loadByProperties(array('type' => 'resources', 'field_results' => $node->id()));  
+    
+  }
+}
