@@ -1,0 +1,6 @@
+name: CCSF OCEIA
+description: CCSF OCEIA Module
+package: CCSF
+
+type: module
+core: 8.x

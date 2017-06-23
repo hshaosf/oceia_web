@@ -1,0 +1,40 @@
+<li class="block-item">
+        <h3 class="t-delta t-sans margin-bottom--half"><a href="#" class="a-oil">{{ resource.title.value }}</a></h3>
+        {% if resource.field_languages.value %}
+        <!-- Should not show language services label if no lanugages -->
+        <p class="t-tiny c-steel">Language Services: 
+          {% for lang in resource.field_languages %}
+          <span class="label radius secondary">{{ lang.entity.name.value }}</span>
+          {% endfor %}
+        </p>
+        {% endif %}
+        <div class="a-icon-left d-block">
+          <span class="ui-icon ui-static ui-medium i-color ">
+          <svg>
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#i-map"></use>
+          </svg>
+          </span>          
+          <p class="offset-icon margin-bottom--half">
+          {{ resource.field_street_address.value }} <br>
+          {{ resource.field_city.value }}, {{ resource.field_state.value }} {{ resource.field_zip_code.value }}
+          </p>
+        </div>    
+        <p>
+          <a href="tel:{{ resource.field_phone.value }}" class="button-on-small">
+          <span class="ui-icon ui-static ui-medium i-color ">
+            <svg>
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#i-phone"></use>
+            </svg>
+          </span>
+          Call {{ resource.field_phone.value }}
+          </a>
+          <a href="{{ resource.field_url.value }}" class="button-on-small" target="_blank">
+          <span class="ui-icon ui-static ui-medium i-color ">
+            <svg>
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#i-link"></use>
+            </svg>
+          </span>
+          Visit Website 
+          </a>
+        </p>
+</li>
