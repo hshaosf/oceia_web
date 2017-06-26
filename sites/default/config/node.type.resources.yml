@@ -1,0 +1,17 @@
+uuid: 70c5663f-1ef8-42b7-bfbb-27cda4c0011c
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Resources
+type: resources
+description: 'Use <em>Resources</em> for non-profit resources that can offer assistance to immigrants.'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

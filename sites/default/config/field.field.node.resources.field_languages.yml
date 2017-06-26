@@ -1,0 +1,28 @@
+uuid: 31ff5522-d462-43e5-a81e-8d2e48f6e03d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_languages
+    - node.type.resources
+    - taxonomy.vocabulary.language_services
+id: node.resources.field_languages
+field_name: field_languages
+entity_type: node
+bundle: resources
+label: Languages
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      language_services: language_services
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
