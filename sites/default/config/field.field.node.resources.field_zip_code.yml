@@ -1,0 +1,23 @@
+uuid: 9c6d184f-2e41-40fb-be70-ddf4d2e84389
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_zip_code
+    - node.type.resources
+id: node.resources.field_zip_code
+field_name: field_zip_code
+entity_type: node
+bundle: resources
+label: 'Zip Code'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

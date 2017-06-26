@@ -1,0 +1,21 @@
+uuid: 37603441-f582-4be1-a626-50629a134bbb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_cta
+    - node.type.result_page
+  module:
+    - text
+id: node.result_page.field_cta
+field_name: field_cta
+entity_type: node
+bundle: result_page
+label: CTA
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

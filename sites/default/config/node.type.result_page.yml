@@ -1,0 +1,17 @@
+uuid: c8254c2a-db8f-4056-9b52-285cd290543d
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'Result page'
+type: result_page
+description: "Use <em>result pages</em> for your result content, such as an 'Become a citizen' page.\t\r\n"
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false
