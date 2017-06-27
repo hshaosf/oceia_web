@@ -1,0 +1,36 @@
+uuid: eff0382d-56fe-4f34-9b75-a35d31fbd279
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.help_page.field_questions
+    - field.field.node.help_page.field_subtitle
+    - node.type.help_page
+  module:
+    - text
+    - user
+id: node.help_page.default
+targetEntityType: node
+bundle: help_page
+mode: default
+content:
+  field_questions:
+    weight: 3
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_subtitle:
+    weight: 1
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  links:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }
