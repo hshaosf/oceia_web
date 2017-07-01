@@ -1,4 +1,4 @@
-uuid: 61a0773e-1fe8-44b6-bd17-d427bf37c24a
+uuid: 759bef7d-84e5-4c2c-90c2-03b5efac646e
 langcode: en
 status: true
 dependencies:
@@ -11,7 +11,7 @@ _core:
 id: oceia_help
 theme: oceia
 region: content
-weight: -7
+weight: -30
 provider: null
 plugin: help_block
 settings:
