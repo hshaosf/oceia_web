@@ -1,0 +1,18 @@
+uuid: 147f29d2-9ee5-4c63-8587-85815e6a7e81
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.result_page
+id: node.result_page.changed
+field_name: changed
+entity_type: node
+bundle: result_page
+label: Changed
+description: 'The time that the node was last edited.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

@@ -1,4 +1,4 @@
-uuid: 54c87611-a672-47e3-bc36-a6e64eff304b
+uuid: ca5a735a-81da-4c79-8ace-06c33c5dd344
 langcode: en
 status: true
 dependencies:
@@ -9,7 +9,7 @@ _core:
 id: oceia_local_tasks
 theme: oceia
 region: content
-weight: -7
+weight: -40
 provider: null
 plugin: local_tasks_block
 settings:

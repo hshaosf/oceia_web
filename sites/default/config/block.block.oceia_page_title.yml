@@ -1,4 +1,4 @@
-uuid: 9efec052-aa42-47be-ac7f-8eea4c02bbd9
+uuid: 3c0d2863-6e65-4f8a-bf3b-0a44a9d27e89
 langcode: en
 status: true
 dependencies:
@@ -9,7 +9,7 @@ _core:
 id: oceia_page_title
 theme: oceia
 region: content
-weight: -7
+weight: -50
 provider: null
 plugin: page_title_block
 settings:

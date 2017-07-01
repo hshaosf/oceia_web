@@ -5,6 +5,14 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.resources.body
+    - field.field.node.resources.field_city
+    - field.field.node.resources.field_languages
+    - field.field.node.resources.field_phone
+    - field.field.node.resources.field_results
+    - field.field.node.resources.field_state
+    - field.field.node.resources.field_street_address
+    - field.field.node.resources.field_url
+    - field.field.node.resources.field_zip_code
     - node.type.resources
   module:
     - text
@@ -25,4 +33,13 @@ content:
   links:
     weight: 100
     region: content
-hidden: {  }
+hidden:
+  field_city: true
+  field_languages: true
+  field_phone: true
+  field_results: true
+  field_state: true
+  field_street_address: true
+  field_url: true
+  field_zip_code: true
+  langcode: true

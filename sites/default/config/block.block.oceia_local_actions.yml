@@ -1,4 +1,4 @@
-uuid: 95a11fe8-8d65-4386-a8a6-833b0f3bf326
+uuid: 77d41e2e-60a2-4a18-a395-c803feddd302
 langcode: en
 status: true
 dependencies:
@@ -9,7 +9,7 @@ _core:
 id: oceia_local_actions
 theme: oceia
 region: content
-weight: -7
+weight: -20
 provider: null
 plugin: local_actions_block
 settings:
