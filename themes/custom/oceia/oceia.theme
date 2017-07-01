@@ -4,3 +4,33 @@ function oceia_preprocess(&$variables, $hook)
 {
     $variables['base_path'] = base_path();
 }
+
+function oceia_preprocess_node(&$variables) {
+  $node = $variables['node'];
+  if($node->getType() == 'result_page'){
+
+    $resources = \Drupal::entityTypeManager()->getStorage('node')->loadByProperties(array('type' => 'resources', 'field_results' => $node->id()));  
+    $variables['resources'] = $resources;
+    
+  }
+}
+
+function oceia_preprocess_region(&$variables) {
+  if($variables['region']=='header'){
+    $block = \Drupal\block\Entity\Block::load('oceia_languageswitcher');
+    if($block && $block->status()){
+      $view = \Drupal::entityTypeManager()
+      ->getViewBuilder('block')
+      ->view($block);
+      $variables['block_language'] = $view; 
+    }
+    
+  }
+}
+
+function oceia_preprocess_links__language_block(&$variables){
+  foreach($variables['links'] as &$link){
+    $link['link']['#options']['attributes']['class'][] = 'c-white';
+    unset($link['link']['#options']['query']['q']);
+  }
+}
