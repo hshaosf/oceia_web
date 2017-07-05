@@ -10,8 +10,11 @@ function oceia_preprocess_node(&$variables) {
   if($node->getType() == 'result_page'){
 
     $resources = \Drupal::entityTypeManager()->getStorage('node')->loadByProperties(array('type' => 'resources', 'field_results' => $node->id()));  
-    $variables['resources'] = $resources;
-    
+    $view_resources = array();
+    foreach ($resources as $node) {
+      $view_resources[] = \Drupal::entityTypeManager()->getViewBuilder('node')->view($node, 'full');
+    }
+    $variables['view_resources'] = $view_resources; 
   }
 }
 

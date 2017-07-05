@@ -1,0 +1,22 @@
+{%
+  set classes = [
+    'field',
+    'label',
+    'radius',
+    'secondary',
+    'field--name-' ~ field_name|clean_class,
+    'field--type-' ~ field_type|clean_class,
+    'field--label-' ~ label_display,
+  ]
+%}
+{%
+  set title_classes = [
+    'field__label',
+    label_display == 'visually_hidden' ? 'visually-hidden',
+  ]
+%}
+<p class="t-tiny c-steel">{{ 'Language Services'|t }}:
+    {% for item in items %}
+      <span{{ attributes.addClass(classes, 'field__item') }} data-tid="{{ item.content['#options'].entity.tid.value }}">{{ item.content['#title'] }}</span>
+    {% endfor %}
+</p>

@@ -1,0 +1,54 @@
+{%
+  set classes = [
+    'block-item',
+    'node',
+    'node--type-' ~ node.bundle|clean_class,
+    node.isPromoted() ? 'node--promoted',
+    node.isSticky() ? 'node--sticky',
+    not node.isPublished() ? 'node--unpublished',
+    view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
+  ]
+%}
+{{ attach_library('classy/node') }}
+<li{{ attributes.addClass(classes) }}>
+  {{ title_prefix }}
+  {% if not page %}
+    <h3{{ title_attributes.addClass(['t-delta','t-sans','margin-bottom--half']) }}>
+      <a href="{{ url }}" rel="bookmark" class="a-oil">{{ label }}</a>
+    </h3>
+  {% endif %}
+  {{ title_suffix }}
+  {% if content.field_languages %}
+  <!-- Should not show language services label if no lanugages -->
+  {{ content.field_languages }}
+  {% endif %}
+  <div class="a-icon-left d-block">
+    <span class="ui-icon ui-static ui-medium i-color ">
+    <svg>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#i-map"></use>
+    </svg>
+    </span>          
+    <p class="offset-icon margin-bottom--half">
+    {{ node.field_street_address.value }} <br>
+    {{ node.field_city.value }}, {{ node.field_state.value }} {{ content.field_zip_code.value }}
+    </p>
+  </div>    
+  <p>
+    <a href="tel:{{ node.field_phone.value }}" class="button-on-small">
+    <span class="ui-icon ui-static ui-medium i-color ">
+      <svg>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#i-phone"></use>
+      </svg>
+    </span>
+    Call {{ node.field_phone.value }}
+    </a>
+    <a href="{{ node.field_url.value }}" class="button-on-small" target="_blank">
+    <span class="ui-icon ui-static ui-medium i-color ">
+      <svg>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#i-link"></use>
+      </svg>
+    </span>
+    Visit Website 
+    </a>
+  </p>
+</li>
