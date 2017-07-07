@@ -1,0 +1,13 @@
+ccsf_oceia.home : 
+  path : /home
+  defaults: 
+    _controller: '\Drupal\ccsf_oceia\Controller\PageController::content' 
+  requirements: 
+    _permission: 'access content'
+ccsf_oceia.help : 
+  path : /help
+  defaults: 
+    _controller: '\Drupal\ccsf_oceia\Controller\PageController::content' 
+  requirements: 
+    _permission: 'access content'
+    
