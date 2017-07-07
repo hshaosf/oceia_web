@@ -29,13 +29,13 @@
             <h2 class="delta t-serif c-oil">Choose from standard topics</h2>
            <p>If you already know what type of immigaton assistance is necessary choose from the topics provided below.</p>
            <div class="form-container clearfix">
-             <select name="options" id="options" class="" data-width="auto">
+             <select id="topic-options" class="" data-width="auto">
           <option value="">Select one</option>
           {% for result in page_vars.results %}
             <option value="{{result.url}}">{{result.title}}</option>
           {% endfor %}
              </select>
-           <a class="button radius" href="info.html">Choose</a>
+           <a class="button radius" data-select="topic-options">Choose</a>
       </div>
         </div>
       </div>

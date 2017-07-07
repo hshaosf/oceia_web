@@ -95,6 +95,23 @@
       });
       return this; 
     },
+    gotoSelect : function(){
+      var _t = this; 
+      $('a[data-select]').click(function(e){
+        e.preventDefault();
+        var el = $(this), name = el.data('select');
+        if(name){
+          var select = $('#'+name);
+          if(select.length && select.val()){
+            _t.goto(select.val());
+          }
+        }
+      });
+      return this; 
+    },
+    goto : function(url){
+      _w.location.href = url; 
+    },
     menu : function(){
       $('nav.top-bar button.button-link').click(function(e){
         e.preventDefault();
@@ -108,7 +125,7 @@
     },
     ready : function(){ 
       console.log('ready');
-      this.menu().qs().toggles(); 
+      this.menu().qs().toggles().gotoSelect(); 
     }
   }; 
   $(document).ready(function(){oceia.ready()});
