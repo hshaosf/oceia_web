@@ -12,7 +12,9 @@ function oceia_preprocess_node(&$variables) {
     $resources = \Drupal::entityTypeManager()->getStorage('node')->loadByProperties(array('type' => 'resources', 'field_results' => $node->id()));  
     $view_resources = array();
     foreach ($resources as $node) {
-      $view_resources[] = \Drupal::entityTypeManager()->getViewBuilder('node')->view($node, 'full');
+      if($node->isPublished() || $node->access('create')){
+        $view_resources[] = \Drupal::entityTypeManager()->getViewBuilder('node')->view($node, 'full');
+      }    
     }
     $variables['view_resources'] = $view_resources; 
   }

@@ -1,2 +1,9 @@
 <?php
 
+function ccsf_oceia_theme($existing, $type, $theme, $path) {
+  return [
+    'page_content' => [
+      'variables' => ['page_name' => NULL, 'page_vars' => NULL],
+    ],
+  ];
+}

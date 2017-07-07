@@ -10,13 +10,14 @@
   ]
 %}
 {{ attach_library('classy/node') }}
+{% if page %}
+<ul>
+{% endif %}
 <li{{ attributes.addClass(classes) }}>
   {{ title_prefix }}
-  {% if not page %}
     <h3{{ title_attributes.addClass(['t-delta','t-sans','margin-bottom--half']) }}>
       <a href="{{ url }}" rel="bookmark" class="a-oil">{{ label }}</a>
     </h3>
-  {% endif %}
   {{ title_suffix }}
   {% if content.field_languages %}
   <!-- Should not show language services label if no lanugages -->
@@ -52,3 +53,6 @@
     </a>
   </p>
 </li>
+{% if page %}
+</ul>
+{% endif %}
