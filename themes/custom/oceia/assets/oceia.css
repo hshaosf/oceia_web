@@ -1,9 +1,66 @@
 .question{ display: none; }
 .question:first-child{ display: block; }
 
-.top-bar .menu-icon .ui-icon, .nav-mobile_header .ui-icon{
-  display: inline;
-  background-image: none;
+#become-a-citizen header,
+#deportation-defense header,
+#rapid-response header,
+#screening header,
+#resources header {
+	background: #daeeff;
+}
+
+header .results-header_values {text-transform: none;}
+
+header p {
+	margin-bottom: .3em !important; 
+}
+
+
+header .results-header_values strong {
+	font-family: "Lato", Helvetica, Arial, Verdana, sans-serif;
+	font-weight: bold;
+}
+
+header .results-header_values .tiny {
+	font-size: 70%;
+}
+
+header .call-to-action {
+	margin: 4rem 0;
+}
+
+header .call-to-action h2 {
+	padding-right: 2em;
+	padding-bottom: 1em;
+}
+
+header .call-to-action .columns .button {
+	width: 60%;
+	margin: 1em 0 4em;
+	display: block;
+}
+
+.splash-wells select {
+	float: left;
+	width: 72%;
+}
+
+.splash-wells .welcome-block h2 {
+	font-size: 1.5rem;
+	line-height: 1.5rem;
+	font-weight: 700;
+}
+
+.splash-wells .welcome-block p {
+	text-align: left;
+	margin-bottom: 2rem;
+}
+
+.splash-wells .form-container .button {
+	width: 25%;
+	float: right;
+	padding: .745rem .5rem;
+	letter-spacing: .1em;
 }
 
 .nav-mobile_container{
@@ -23,7 +80,6 @@
 
 .nav-mobile_container.hidden{
   width: 0;
-  display: block;
 }
 
 .form-back {
@@ -37,5 +93,65 @@
 	letter-spacing: normal;
 }
 
+.resources-list .label {
+  margin: .125rem;
+}
 
+/*--Results Section--*/
+
+.results-section-header {
+	padding-bottom: 2rem;
+	margin-bottom: 1rem;
+	border-bottom: 1px solid #dedee0;
+}
+
+.language-filter {
+	margin-top: 2rem;
+}
+
+.language-filter h2 {
+	padding: 1.25rem;
+	background: #daeeff;
+	margin-top: -1.25rem;
+	margin-left: -1.25rem;
+	margin-right: -1.25rem;
+}
+
+
+.language-filter .checkbox-block_label {
+	font-size: 0.875rem;
+	line-height: 1.6;
+}
+
+.language-filter #more-languages {
+	margin-top: 1rem;
+}
+
+.language-filter .filter-footer ul {
+	margin-top: 2rem;
+}
+
+.language-filter .filter-footer li {
+	display: inline-block;
+	margin-right: 1rem;
+}
+
+
+@media only screen and (min-width: 48.0625em) { /* 769px medium column break */
+	
+	.splash-wells .welcome-block {
+		padding-left: 3rem;
+		padding-right: 3rem;
+		padding-top: 2rem !important;
+	}	
+}
+
+@media only screen and (min-width: 60.0625em){
+  #become-a-citizen header .call-to-action h2{
+    min-height: 6em;
+  }
+  header .call-to-action .columns .button {
+    margin-bottom: 1em;
+  }
+}
 
