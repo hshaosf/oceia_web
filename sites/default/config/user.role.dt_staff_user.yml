@@ -1,0 +1,18 @@
+uuid: 6d5a6669-cf48-4ac3-8e7c-e15aa196bfcf
+langcode: en
+status: true
+dependencies: {  }
+id: dt_staff_user
+label: 'DT Staff User'
+weight: -7
+is_admin: null
+permissions:
+  - 'create resources content'
+  - 'delete any resources content'
+  - 'delete own resources content'
+  - 'delete terms in language_services'
+  - 'edit any resources content'
+  - 'edit terms in language_services'
+  - 'use text format basic_html'
+  - 'use text format full_html'
+  - 'view resources revisions'

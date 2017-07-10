@@ -1,0 +1,14 @@
+uuid: 6c73931e-b736-48c7-a785-6d6697e39f27
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.oceia_staff_user
+  module:
+    - user
+id: user_remove_role_action.oceia_staff_user
+label: 'Remove the OCEIA Staff User role from the selected users'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: oceia_staff_user

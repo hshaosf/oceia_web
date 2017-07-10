@@ -1,0 +1,14 @@
+uuid: 2f77f0da-7b8c-4b08-a6a6-45b85e0f88dd
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.dt_staff_user
+  module:
+    - user
+id: user_add_role_action.dt_staff_user
+label: 'Add the DT Staff User role to the selected users'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: dt_staff_user

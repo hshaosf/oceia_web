@@ -1,0 +1,14 @@
+uuid: 083d2d59-74d0-43d2-ad82-d51ed25688a9
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.dt_staff_user
+  module:
+    - user
+id: user_remove_role_action.dt_staff_user
+label: 'Remove the DT Staff User role from the selected users'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: dt_staff_user

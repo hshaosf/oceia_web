@@ -6,18 +6,14 @@ _core:
   default_config_hash: dJ0L2DNSj5q6XVZAGsuVDpJTh5UeYkIPwKrUOOpr8YI
 id: authenticated
 label: 'City Staff user'
-weight: 1
+weight: -9
 is_admin: false
 permissions:
   - 'access comments'
   - 'access content'
   - 'access content overview'
+  - 'access in-place editing'
   - 'access shortcuts'
-  - 'access site-wide contact form'
   - 'access toolbar'
   - 'edit own resources content'
-  - 'post comments'
-  - 'search content'
-  - 'skip comment approval'
-  - 'use text format basic_html'
   - 'view the administration theme'

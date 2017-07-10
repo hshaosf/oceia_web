@@ -1,0 +1,14 @@
+uuid: ac094ef9-8f5d-4c89-a125-629fc17fc493
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.oceia_staff_user
+  module:
+    - user
+id: user_add_role_action.oceia_staff_user
+label: 'Add the OCEIA Staff User role to the selected users'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: oceia_staff_user
