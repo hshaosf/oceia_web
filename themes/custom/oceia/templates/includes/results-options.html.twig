@@ -1,13 +1,13 @@
+
 <section class="bg-dust padding-top--2x">
   <div class="row">
     <div class="small-12 columns explore-options">
       <h2 class="status-header_title gamma padding-top">Explore other options</h2>
       <ul class="local-nav padding-top" role="navigation">
-        <li class="local-nav-item active"><a href="results_citizenship.html"><i class="fa fa-id-card-o" aria-hidden="true"></i> Become A Citizen</a></li>
-        <li class="local-nav-item"><a href="results_deportationdefense.html"><i class="fa fa-balance-scale" aria-hidden="true"></i> Deportation Defense</a></li>
-        <li class="local-nav-item"><a href="results_rapidresponse.html"><i class="fa fa-phone" aria-hidden="true"></i> Call Rapid Response</a></li>
-        <li class="local-nav-item"><a href="results_detentiondefense.html"><i class="fa fa-gavel" aria-hidden="true"></i> Detention Defense</a></li>
-        <li class="local-nav-item"><a href="results_screening.html"><i class="fa fa-university" aria-hidden="true"></i> Learn Your Rights</a></li>
+        {% for result in oceia_results %}
+        <li class="local-nav-item{% if result.nid == node.id %} active{% endif %}"><a href="{{result.url}}"><i class="fa {{result.fa_icon}}" aria-hidden="true"></i>{{result.title}}</a></li>
+        {% endfor %}
+        
       </ul>
       <p class="padding-top padding-bottom--2x text-center">You can also see <a href="resources.html">contact information</a> for all San Francisco immigration legal aid organizations.</p>
     </div>
