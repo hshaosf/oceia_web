@@ -17,6 +17,7 @@ function oceia_preprocess_node(&$variables) {
       }    
     }
     $variables['view_resources'] = $view_resources; 
+    
   }
 }
 

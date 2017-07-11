@@ -2,6 +2,7 @@ global-styling:
   version: 1.x
   css:
     theme:
+      assets/css/font-awesome.min.css: {}
       assets/toolkit.css: {}
       assets/oceia.css: {}
 global-scripts:

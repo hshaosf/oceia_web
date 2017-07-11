@@ -29,7 +29,7 @@ class PageController extends ControllerBase {
     ];
   }
 
-  private function getResults(){
+  protected function getResults(){
     $results = array(); 
     $result_nodes = \Drupal::entityTypeManager()->getStorage('node')->loadByProperties(array('type' => 'result_page')); 
     $lang_code = \Drupal::service('language_manager')->getCurrentLanguage()->getId();

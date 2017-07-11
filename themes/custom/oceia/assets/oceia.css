@@ -1,13 +1,7 @@
 .question{ display: none; }
 .question:first-child{ display: block; }
 
-#become-a-citizen header,
-#deportation-defense header,
-#rapid-response header,
-#screening header,
-#resources header {
-	background: #daeeff;
-}
+
 
 header .results-header_values {text-transform: none;}
 
@@ -135,6 +129,35 @@ header .call-to-action .columns .button {
 	display: inline-block;
 	margin-right: 1rem;
 }
+
+.explore-options .local-nav {
+	background: transparent;
+	letter-spacing: normal;
+}
+
+.explore-options .local-nav li {
+	background: #fff;
+}
+
+.explore-options .local-nav li.active a {
+	background: #fff;
+	text-decoration: underline;
+	font-weight: 700;
+}
+
+.explore-options .local-nav li a {
+	color: #0077da;
+	border: #dedee0 solid 1px;
+	background: #fff;
+	border-radius: 5px;
+	text-transform: none;
+	font-weight: 400;
+}
+
+.explore-options .local-nav li a i {
+	margin-right: .5rem;
+}
+
 
 
 @media only screen and (min-width: 48.0625em) { /* 769px medium column break */
