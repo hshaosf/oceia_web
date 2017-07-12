@@ -1,5 +1,4 @@
 {{ block_language }}
-<!--<section><div class="translate-bar bar bg-tuatara ng-scope"><div class="row"><div class="medium-12 columns"><ul class="inline-list no-margin t-small right"><li class="c-iron show-for-medium-up">Select Language</li><li><a class="c-white" href="#">Español</a></li><li><a class="c-white t-ch" href="#">中文<span class="sr-only">Chinese</span></a></li><li><a class="c-white" href="#">Filipino</a></li></ul></div></div></div></section>-->
 
 <div class="version-bar bar bg-primary">
   <div class="row">
@@ -28,8 +27,8 @@
   <section class="top-bar-section">
     <ul class="nav-menu right">
       <li>
-        <a href="info.html">
-          {{ 'The Law'|t }}
+        <a href="{{ url('<front>') }}">
+          {{ 'Home'|t }}
         </a>
       </li>
       <li>
@@ -46,10 +45,10 @@
   <header class="nav-mobile_header"><button aria-label="Close Menu" class="nav-mobile_menu-icon nav-mobile-topfocus i-white button-link nav-mobile-focus" title="Close Menu"><span class="ui-icon ui-medium i-white"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#i-right"></use></svg></span></button></header>
   <ul class="nav-mobile">
     <li class="">
-      <a href="info.html">The Law</a>
+      <a href="{{ url('<front>') }}">{{ 'Home'|t }}</a>
     </li>
     <li class="">
-      <a href="{{ path('ccsf_oceia.help') }}">Find Help</a>
+      <a href="{{ path('ccsf_oceia.help') }}">{{ 'Find Help'|t }}</a>
     </li>
   </ul>
 </div>
