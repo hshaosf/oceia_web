@@ -60,10 +60,14 @@ class OceiaController extends ControllerBase {
     return $results; 
   }
 
+  /**
+    * Extra informations for Results
+    * Helper function for MVP launch to store extra result information. 
+    */
   protected static function getResultExtra($nid){
-    $extra = array(); 
+    $extra = array('cta_class'=>'', 'fa_icon'=>''); 
     switch($nid){
-      case 19 : default : 
+      case 19 : 
         $extra['cta_class'] = 'bg-primary-tint';
         $extra['fa_icon'] = 'fa-id-card-o';
         break;
@@ -71,6 +75,10 @@ class OceiaController extends ControllerBase {
     return $extra; 
   }
 
+  protected static function getLanguages(){
+    $lang_terms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree('language_services', 0, 1); 
+    return $lang_terms; 
+  }
 
 
 }

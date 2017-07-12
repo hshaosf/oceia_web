@@ -1,0 +1,29 @@
+{% set num_item_shown = 5 %}
+<div class="small-12 medium-4 columns language-filter content-card" id="results-languages">
+  <h2 class="t-base t-sans t-bold padding-bottom">Agencies based on language support:</h2>
+  <div class="check-box-filter">
+    <div class="checkbox-group">
+      {% for lang in oceia_languages %}
+      {% if loop.index == num_item_shown+1 %}
+      <div id="more-languages" style="display:none;">
+      {% endif %}
+      <p class="checkbox-block">
+        <input type="checkbox" name="languages" value="{{ lang.tid }}" id="languages-{{ lang.tid }}">
+        <label class="checkbox-block_label" for="languages-{{ lang.tid }}">{{lang.name}}</label>
+      </p>
+      {% if loop.last and loop.index > num_item_shown %}
+      </div>
+      {% endif %}
+      {% endfor %}
+    </div>
+    <p class="filter-add"><a role="button" data-toggle="more-languages">
+      <span class="toggle-more"><i class="fa fa-plus" aria-hidden="true"></i>View more languages</span>
+      <span class="toggle-less" style="display:none;"><i class="fa fa-minus" aria-hidden="true"></i>View less languages</span>
+    </a></p>    
+    <div class="filter-footer">
+      <p>
+        <a role="button" class="toggle-clear">Clear all</a>
+      </p>
+    </div>
+  </div>
+</div>

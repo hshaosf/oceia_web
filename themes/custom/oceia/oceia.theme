@@ -19,6 +19,8 @@ function oceia_preprocess_node(&$variables) {
     $variables['view_resources'] = $view_resources; 
 
     $variables['oceia_results'] = \Drupal\ccsf_oceia\Controller\OceiaController::get('oceia.results'); 
+
+    $variables['oceia_languages'] = \Drupal\ccsf_oceia\Controller\OceiaController::get('oceia.languages');
   }
 }
 

@@ -69,27 +69,63 @@
       });
       return this; 
     },
+    checkbox : function(id, item, field){
+      var el = $('#'+id),
+        refresh = function(el){
+          if(boxes.length){
+            var checked = boxes.filter(':checked'),checked_values=[]; 
+            if(checked.length){
+              checked.each(function(i,e){checked_values.push($(e).val());})
+              $(item).each(function(i,e){var s=$(e).find(field).filter(function(j,f){return $.inArray($(f).data('value')+'',checked_values)>-1;}); if(s.length){$(e).show();}else{$(e).hide();}}); 
+            }else{
+              $(item).show(); 
+            }
+            
+          }
+        }
+      ; 
+      if(el.length){
+        var boxes = el.find('input[type="checkbox"]'); 
+        var clear = el.find('.toggle-clear');
+        if(boxes.length){
+          boxes.click(function(e){
+            refresh();
+          });
+          if(clear.length){
+            clear.click(function(e){
+              e.preventDefault();
+              boxes.prop('checked', false); 
+              refresh(el); 
+            });
+          }
+        }
+        
+      }
+      return this;   
+    },
     toggles : function(){
       var _t = this, 
-          hide =  function(el, elToggle, text){
-            el.text(text);
+          hide =  function(el, elToggle){
+            el.children('.toggle-less').hide();
+            el.children('.toggle-more').show();
             elToggle.hide(); 
           },
-          show = function(el, elToggle, text){
-            el.text(text);
+          show = function(el, elToggle){
+            el.children('.toggle-less').show();
+            el.children('.toggle-more').hide();
             elToggle.show(); 
           }; 
-      $('button[data-toggle]').each(function(i){
+      $('a[data-toggle]').each(function(i){
         var el = $(this);
-        hide(el, $('#'+el.data('toggle')), el.data('hidden')); 
+        hide(el, $('#'+el.data('toggle'))); 
       });
-      $('button[data-toggle]').click(function(e){
+      $('a[data-toggle]').click(function(e){
         e.preventDefault();
         var el = $(this), elToggle = $('#'+el.data('toggle')); 
         if(elToggle.is(':visible')){
-          hide(el, elToggle, el.data('hidden')); 
+          hide(el, elToggle); 
         }else{
-          show(el, elToggle, el.data('shown')); 
+          show(el, elToggle); 
         }
 
       });
@@ -125,7 +161,7 @@
     },
     ready : function(){ 
       console.log('ready');
-      this.menu().qs().toggles().gotoSelect(); 
+      this.menu().qs().toggles().gotoSelect().checkbox('results-languages', '.block-item-resources', '.field-languages'); 
     }
   }; 
   $(document).ready(function(){oceia.ready()});

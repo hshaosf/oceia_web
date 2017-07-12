@@ -8,6 +8,14 @@
     view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
   ]
 %}
+{%
+  set current_result = {}
+%}
+{% for result in oceia_results %}
+    {% if result.nid == node.id %}
+      {% set current_result = result %}
+    {% endif %}
+  {% endfor %}
 {{ attach_library('classy/node') }}
 <div{{ attributes.addClass(classes) }}>
 
@@ -18,8 +26,7 @@
     </h2>
   {% endif %}
   {{ title_suffix }}
-
-  <header class="lead-header text-left bg-primary-tint">
+  <header{{ attributes.addClass(['lead-header','text-left', current_result.cta_class]) }}>
       <div class="row">
           <div class="medium-12 columns">
               <h1 class="lead-header_title">{{ label }}</h1>
@@ -51,37 +58,18 @@
                 </hgroup>
             </div>
         </div>
-        <div class="print text-right"><a href="javascript:window.print();"><i class="fa fa-print"></i> Print this list</a></div>
     </div>
 
     <div class="row">
-      <div class="small-12 medium-4 columns language-filter content-card">
-        <h2 class="t-base t-sans t-bold padding-bottom">Viewing non-profits that support:</h2>
-        <div class="check-box-filter">
-          <div class="checkbox-group">
-            <p class="checkbox-block">
-              <input type="checkbox" name="languages" value="en" id="languages-en">
-              <label class="checkbox-block_label" for="languages-en">English</label>
-            </p>
-          </div>
-          <p><a role="button" href="" class="button-on-small">
-            <span class="ui-icon ui-static ui-medium i-color ">
-              <svg><use xlink:href="#i-plus"></use></svg>
-              </span>View more languages</a>
-         </p>   
-          <div class="filter-footer">
-            <p>
-              <a role="button" href=""><i class="fa fa-times-circle" aria-hidden="true"></i> Clear selected</a>
-            </p>
-          </div>
-        </div>
+      {% include directory ~ '/templates/includes/results-languages.html.twig' %}
+      <div class="small-12 medium-7 columns">
+        <div class="print text-right"><a href=""><i class="fa fa-print"></i> Print agency list</a></div>
+        <ul class="resources-list block-list">
+          {% for resource in view_resources %}
+          {{ resource }}
+          {% endfor %}
+        </ul>
       </div>
-    <div class="small-12 medium-7 columns">
-      <ul class="resources-list block-list">
-        {% for resource in view_resources %}
-        {{ resource }}
-        {% endfor %}
-      </ul>
     </div>
   </section>
 

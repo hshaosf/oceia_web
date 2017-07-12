@@ -1,6 +1,7 @@
 {%
   set classes = [
     'field',
+    'field-languages',
     'label',
     'radius',
     'secondary',
@@ -17,6 +18,6 @@
 %}
 <p class="t-tiny c-steel">{{ 'Language Services'|t }}:
     {% for item in items %}
-      <span{{ attributes.addClass(classes, 'field__item') }} data-tid="{{ item.content['#options'].entity.tid.value }}">{{ item.content['#title'] }}</span>
+      <span{{ attributes.addClass(classes, 'field__item') }} data-value="{{ item.content['#options'].entity.tid.value }}">{{ item.content['#title'] }}</span>
     {% endfor %}
 </p>

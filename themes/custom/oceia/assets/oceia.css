@@ -93,14 +93,19 @@ header .call-to-action .columns .button {
 
 /*--Results Section--*/
 
+.results-section {
+	padding-top: 2em;
+}
+
+
 .results-section-header {
-	padding-bottom: 2rem;
-	margin-bottom: 1rem;
-	border-bottom: 1px solid #dedee0;
+	padding-bottom: 1rem;
+	margin-bottom: .5em;
 }
 
 .language-filter {
 	margin-top: 2rem;
+	margin-bottom: 4rem;
 }
 
 .language-filter h2 {
@@ -121,6 +126,40 @@ header .call-to-action .columns .button {
 	margin-top: 1rem;
 }
 
+.language-filter .filter-add {
+	font-size: .875rem;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+	margin-left: .5rem;
+	text-decoration: none;
+}
+
+.language-filter .filter-add a {
+	text-decoration: none;
+}
+
+.language-filter .filter-add i {
+	margin-right: .75rem;
+}
+
+.language-filter .filter-footer {
+	margin-top: .75rem;
+	padding-top: .75rem;
+	margin-bottom: -.5rem;
+}
+
+.language-filter .filter-footer p {
+	text-align: right;
+	margin-bottom: 0;
+}
+
+.language-filter .filter-footer a {
+	padding: .25rem .5rem;
+	border: 1px solid #dedee0;
+	border-radius: 5px;
+	text-decoration: none;
+}
+
 .language-filter .filter-footer ul {
 	margin-top: 2rem;
 }
@@ -128,6 +167,12 @@ header .call-to-action .columns .button {
 .language-filter .filter-footer li {
 	display: inline-block;
 	margin-right: 1rem;
+}
+
+.print {
+	border-top: 1px solid #dedee0;
+	border-bottom: 1px solid #dedee0;
+	padding: .5rem 0;
 }
 
 .explore-options .local-nav {
@@ -140,16 +185,16 @@ header .call-to-action .columns .button {
 }
 
 .explore-options .local-nav li.active a {
-	background: #fff;
+	background: #daeeff;
 	text-decoration: underline;
 	font-weight: 700;
+	border: 1px solid #0077da;
 }
 
 .explore-options .local-nav li a {
 	color: #0077da;
 	border: #dedee0 solid 1px;
 	background: #fff;
-	border-radius: 5px;
 	text-transform: none;
 	font-weight: 400;
 }
@@ -166,7 +211,21 @@ header .call-to-action .columns .button {
 		padding-left: 3rem;
 		padding-right: 3rem;
 		padding-top: 2rem !important;
-	}	
+	}
+
+	.status-header_content {
+		margin-top: 2rem;
+	}
+
+	.print {
+		margin-top: 1.75rem;
+		border-top: none;
+	}
+
+	.explore-options .local-nav li a {
+		border-radius: 5px;
+	}
+	
 }
 
 @media only screen and (min-width: 60.0625em){
