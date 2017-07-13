@@ -5,7 +5,7 @@
       <h2 class="status-header_title gamma padding-top">Explore other options</h2>
       <ul class="local-nav padding-top" role="navigation">
         {% for result in oceia_results %}
-        <li class="local-nav-item{% if result.nid == node.id %} active{% endif %}"><a href="{{result.url}}"><i class="fa {{result.fa_icon}}" aria-hidden="true"></i>{{result.title}}</a></li>
+        <li class="local-nav-item{% if result.nid == node.id %} active{% endif %}"><a href="{{result.url}}"><i class="fa {{result.fa_icon}}" aria-hidden="true"></i>{{result.title_short|default(result.title)}}</a></li>
         {% endfor %}
         
       </ul>

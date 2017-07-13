@@ -7,3 +7,15 @@ function ccsf_oceia_theme($existing, $type, $theme, $path) {
     ],
   ];
 }
+
+function ccsf_oceia_node_insert($node){
+  \Drupal::entityManager()->getViewBuilder('node')->resetCache();
+}
+
+function ccsf_oceia_node_update($node){
+  \Drupal::entityManager()->getViewBuilder('node')->resetCache();
+}
+
+function ccsf_oceia_node_delete($node){
+  \Drupal::entityManager()->getViewBuilder('node')->resetCache();
+}

@@ -8,15 +8,8 @@ function oceia_preprocess(&$variables, $hook)
 function oceia_preprocess_node(&$variables) {
   $node = $variables['node'];
   if($node->getType() == 'result_page'){
-
-    $resources = \Drupal::entityTypeManager()->getStorage('node')->loadByProperties(array('type' => 'resources', 'field_results' => $node->id()));  
-    $view_resources = array();
-    foreach ($resources as $node) {
-      if($node->isPublished() || $node->access('create')){
-        $view_resources[] = \Drupal::entityTypeManager()->getViewBuilder('node')->view($node, 'full');
-      }    
-    }
-    $variables['view_resources'] = $view_resources; 
+    
+    $variables['view_resources'] = \Drupal\ccsf_oceia\Controller\OceiaController::get('oceia.resources', $node); 
 
     $variables['oceia_results'] = \Drupal\ccsf_oceia\Controller\OceiaController::get('oceia.results'); 
 

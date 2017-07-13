@@ -76,9 +76,9 @@
             var checked = boxes.filter(':checked'),checked_values=[]; 
             if(checked.length){
               checked.each(function(i,e){checked_values.push($(e).val());})
-              $(item).each(function(i,e){var s=$(e).find(field).filter(function(j,f){return $.inArray($(f).data('value')+'',checked_values)>-1;}); if(s.length){$(e).show();}else{$(e).hide();}}); 
+              $(item).each(function(i,e){var s=$(e).find(field).filter(function(j,f){return $.inArray($(f).data('value')+'',checked_values)>-1;}); if(s.length){$(e).slideDown();}else{$(e).slideUp();}}); 
             }else{
-              $(item).show(); 
+              $(item).slideDown(); 
             }
             
           }
@@ -108,12 +108,12 @@
           hide =  function(el, elToggle){
             el.children('.toggle-less').hide();
             el.children('.toggle-more').show();
-            elToggle.hide(); 
+            elToggle.slideUp(); 
           },
           show = function(el, elToggle){
             el.children('.toggle-less').show();
             el.children('.toggle-more').hide();
-            elToggle.show(); 
+            elToggle.slideDown(); 
           }; 
       $('a[data-toggle]').each(function(i){
         var el = $(this);

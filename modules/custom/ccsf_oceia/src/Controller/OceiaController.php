@@ -29,12 +29,13 @@ class OceiaController extends ControllerBase {
     ];
   }
 
-  public static function get($input){
-    $parts = explode('.', $input); 
+  public static function get(...$input){
+    $parts = explode('.', $input[0]); 
     if(count($parts) > 1){
       $method = 'get'.ucwords($parts[1]);
       if(method_exists(get_class(), $method)){
-        return self::$method(); 
+        array_shift($input);
+        return self::$method(...$input); 
       } 
     }
     error_log(get_class().'.get:'.$input.'('.$method.') not found'); 
@@ -53,10 +54,11 @@ class OceiaController extends ControllerBase {
         }
         $nid = $node->id(); 
         $title = $node->get('title')->value;
+        $title_short = $node->get('field_title_short')->value;
         $url = $node->url();
         $cta_class = $node->get('field_css_class_1')->value;
         $fa_icon = $node->get('field_css_class_2')->value;
-        $results[] = array('nid'=>$nid, 'title'=>$title, 'url'=>$url, 'cta_class'=>$cta_class, 'fa_icon'=>$fa_icon); 
+        $results[] = array('nid'=>$nid, 'title'=>$title, 'title_short'=>$title_short, 'url'=>$url, 'cta_class'=>$cta_class, 'fa_icon'=>$fa_icon); 
       }
     }
     return $results; 
@@ -65,6 +67,18 @@ class OceiaController extends ControllerBase {
   protected static function getLanguages(){
     $lang_terms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree('language_services', 0, 1); 
     return $lang_terms; 
+  }
+
+  protected static function getResources($node){ 
+    $resources = \Drupal::entityTypeManager()->getStorage('node')->loadByProperties(array('type' => 'resources', 'field_results' => $node->id())); 
+    usort($resources, function($a, $b){ return strcmp($a->get('title')->value, $b->get('title')->value); }); 
+    $view_resources = array();
+    foreach ($resources as $node) {
+      if($node->isPublished() || $node->access('create')){
+        $view_resources[] = \Drupal::entityTypeManager()->getViewBuilder('node')->view($node, 'full');
+      }    
+    }
+    return $view_resources;
   }
 
 
