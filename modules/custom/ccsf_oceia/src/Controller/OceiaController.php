@@ -54,25 +54,12 @@ class OceiaController extends ControllerBase {
         $nid = $node->id(); 
         $title = $node->get('title')->value;
         $url = $node->url();
-        $results[] = array_merge(array('nid'=>$nid, 'title'=>$title, 'url'=>$url), self::getResultExtra($nid)); 
+        $cta_class = $node->get('field_css_class_1')->value;
+        $fa_icon = $node->get('field_css_class_2')->value;
+        $results[] = array('nid'=>$nid, 'title'=>$title, 'url'=>$url, 'cta_class'=>$cta_class, 'fa_icon'=>$fa_icon); 
       }
     }
     return $results; 
-  }
-
-  /**
-    * Extra informations for Results
-    * Helper function for MVP launch to store extra result information. 
-    */
-  protected static function getResultExtra($nid){
-    $extra = array('cta_class'=>'', 'fa_icon'=>''); 
-    switch($nid){
-      case 19 : 
-        $extra['cta_class'] = 'bg-primary-tint';
-        $extra['fa_icon'] = 'fa-id-card-o';
-        break;
-    }
-    return $extra; 
   }
 
   protected static function getLanguages(){

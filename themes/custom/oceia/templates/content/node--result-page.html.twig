@@ -8,14 +8,6 @@
     view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
   ]
 %}
-{%
-  set current_result = {}
-%}
-{% for result in oceia_results %}
-    {% if result.nid == node.id %}
-      {% set current_result = result %}
-    {% endif %}
-  {% endfor %}
 {{ attach_library('classy/node') }}
 <div{{ attributes.addClass(classes) }}>
 
@@ -26,12 +18,12 @@
     </h2>
   {% endif %}
   {{ title_suffix }}
-  <header{{ attributes.addClass(['lead-header','text-left', current_result.cta_class]) }}>
+  <header{{ attributes.addClass(['lead-header','text-left', node.field_css_class_1.value]) }}>
       <div class="row">
           <div class="medium-12 columns">
               <h1 class="lead-header_title">{{ label }}</h1>
               <div class="results-header">
-                  <p class="results-header_values">{{ content.field_subtitle.0 }}</p>
+                  <div class="results-header_values">{{ content.field_subtitle.0 }}</div>
                   <p class="tiny"><a href="{{ path('ccsf_oceia.help') }}">Start a new search</a>
               </div>
           </div>
@@ -40,7 +32,7 @@
           {{ content.field_cta.0 }}
       </section>
   </header>
-
+  {% if node.body.value %}
   <section class="results-section border-top">
     <div class="row">
         <div class="small-12 columns results-section-header">
@@ -54,7 +46,7 @@
                         </span>
                     </div>
                     <h2 class="status-header_title gamma">Who can help</h2>
-                    <p class="no-margin">{{ content.body.0 }}</p>
+                    <div class="no-margin">{{ content.body.0 }}</div>
                 </hgroup>
             </div>
         </div>
@@ -63,7 +55,7 @@
     <div class="row">
       {% include directory ~ '/templates/includes/results-languages.html.twig' %}
       <div class="small-12 medium-7 columns">
-        <div class="print text-right"><a href=""><i class="fa fa-print"></i> Print agency list</a></div>
+        <div class="print text-right"><a href="javascript:window.print();"><i class="fa fa-print"></i> Print agency list</a></div>
         <ul class="resources-list block-list">
           {% for resource in view_resources %}
           {{ resource }}
@@ -72,7 +64,7 @@
       </div>
     </div>
   </section>
-
+  {% endif %}
   {% include directory ~ '/templates/includes/results-options.html.twig' %}
   
 </div>
