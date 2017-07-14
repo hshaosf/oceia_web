@@ -11,3 +11,4 @@ global-scripts:
     js/oceia.js: {}
   dependencies:
     - core/jquery
+    - core/jquery.ui.tooltip

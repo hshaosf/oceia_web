@@ -159,9 +159,15 @@
       }); 
       return this; 
     },
+    tooltip : function(el){
+      if(el.length){
+        el.tooltip(); 
+      }
+      return this;
+    },
     ready : function(){ 
       console.log('ready');
-      this.menu().qs().toggles().gotoSelect().checkbox('results-languages', '.block-item-resources', '.field-languages'); 
+      this.menu().tooltip($('.translate-bar')).qs().toggles().gotoSelect().checkbox('results-languages', '.block-item-resources', '.field-languages'); 
     }
   }; 
   $(document).ready(function(){oceia.ready()});

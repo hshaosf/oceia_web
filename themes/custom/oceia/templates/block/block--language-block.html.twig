@@ -1,5 +1,13 @@
 <section><div class="translate-bar bar bg-tuatara"><div class="row"><div class="medium-12 columns">
+  {% if false %}
   {% block content %}
     {{ content }}
   {% endblock %}
+  {% else %}
+  <ul class="inline-list no-margin t-small right">
+    <li><span data-tooltip aria-haspopup="true" class="c-white has-tip" data-disable-hover="false" tabindex="1" title="Para obtener más información sobre esta notificación en español, llame al siguiente teléfono 415-xxx-xxxx.">Español</span></li>
+      <li><span data-tooltip aria-haspopup="true" class="c-white has-tip" data-disable-hover="false" tabindex="1" title="如果你需要用華語獲得關於這通告的細節,請電 415-xxx-xxxx.">中文</span></li>
+      <li><span data-tooltip aria-haspopup="true" class="c-white has-tip" data-disable-hover="false" tabindex="1" title="Para makuha mo ang informacion tungkol sa noticia na ito sa tagalog, paki tawagan lang ang numero 415-xxx-xxxx.">Tagalog</span></li>
+  </ul>
+  {% endif %}
 </div></div></div></section>
