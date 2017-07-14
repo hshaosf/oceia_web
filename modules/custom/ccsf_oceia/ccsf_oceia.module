@@ -8,14 +8,26 @@ function ccsf_oceia_theme($existing, $type, $theme, $path) {
   ];
 }
 
-function ccsf_oceia_node_insert($node){
+function ccsf_oceia_node_insert($entity){
   \Drupal::entityManager()->getViewBuilder('node')->resetCache();
 }
 
-function ccsf_oceia_node_update($node){
+function ccsf_oceia_node_update($entity){
   \Drupal::entityManager()->getViewBuilder('node')->resetCache();
 }
 
-function ccsf_oceia_node_delete($node){
+function ccsf_oceia_node_delete($entity){
+  \Drupal::entityManager()->getViewBuilder('node')->resetCache();
+}
+
+function ccsf_oceia_menu_insert($entity){
+  \Drupal::entityManager()->getViewBuilder('node')->resetCache();
+}
+
+function ccsf_oceia_menu_update($entity){
+  \Drupal::entityManager()->getViewBuilder('node')->resetCache();
+}
+
+function ccsf_oceia_menu_delete($entity){
   \Drupal::entityManager()->getViewBuilder('node')->resetCache();
 }

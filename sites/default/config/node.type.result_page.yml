@@ -6,8 +6,9 @@ dependencies:
     - menu_ui
 third_party_settings:
   menu_ui:
-    available_menus: {  }
-    parent: ''
+    available_menus:
+      - results-menu
+    parent: 'results-menu:'
 name: 'Result page'
 type: result_page
 description: "Use <em>result pages</em> for your result content, such as an 'Become a citizen' page.\t\r\n"

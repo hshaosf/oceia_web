@@ -44,11 +44,26 @@ class OceiaController extends ControllerBase {
 
   protected static function getResults(){
     $results = array(); 
-    $result_nodes = \Drupal::entityTypeManager()->getStorage('node')->loadByProperties(array('type' => 'result_page')); 
     $lang_code = \Drupal::service('language_manager')->getCurrentLanguage()->getId();
 
+    $results_menu = \Drupal::menuTree()->load('results-menu', new \Drupal\Core\Menu\MenuTreeParameters); 
+    $manipulators = array(
+    ['callable' => 'menu.default_tree_manipulators:checkAccess'],
+    ['callable' => 'menu.default_tree_manipulators:generateIndexAndSort']
+    );
+    $results_menu = \Drupal::menuTree()->transform($results_menu, $manipulators);
+    $nodes = array(); 
+    foreach($results_menu as $menu){
+      $route = $menu->link->getRouteParameters();
+      if($route && $nid = $route['node']){
+        $nodes[] = $nid; 
+      }
+    }
+
+    $result_nodes = \Drupal::entityTypeManager()->getStorage('node')->loadMultiple($nodes); 
+
     foreach($result_nodes as $node){
-      if($node->isPublished() || $node->access('create')){
+      if($node->getType() == 'result_page' && ($node->isPublished() || $node->access('create'))){
         if($node->hasTranslation($lang_code)){
           $node = $node->getTranslation($lang_code); 
         }

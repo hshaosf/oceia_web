@@ -1,0 +1,8 @@
+uuid: 39e13fc3-9c04-4447-b28c-4e11fe47a1a0
+langcode: en
+status: true
+dependencies: {  }
+id: results-menu
+label: 'Results menu'
+description: 'Results menu links'
+locked: false
