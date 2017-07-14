@@ -4,8 +4,11 @@ status: true
 dependencies:
   config:
     - field.field.node.result_page.body
+    - field.field.node.result_page.field_css_class_1
+    - field.field.node.result_page.field_css_class_2
     - field.field.node.result_page.field_cta
     - field.field.node.result_page.field_subtitle
+    - field.field.node.result_page.field_title_short
     - node.type.result_page
   module:
     - text
@@ -22,6 +25,22 @@ content:
     settings: {  }
     third_party_settings: {  }
     region: content
+  field_css_class_1:
+    weight: 4
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_css_class_2:
+    weight: 5
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
   field_cta:
     weight: 2
     label: hidden
@@ -35,6 +54,14 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: text_default
+    region: content
+  field_title_short:
+    weight: 6
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
     region: content
   links:
     weight: 0
