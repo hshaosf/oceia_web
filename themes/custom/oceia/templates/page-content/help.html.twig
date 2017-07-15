@@ -1,1 +1,130 @@
-HELP PAGE
+<header class="lead-header bg-image bg-gradient margin-bottom--2x">
+  <div class="row">
+    <div class="large-12 columns">
+      <div class="lead-header_group">
+        <h1 class="lead-header_title c-white">Get Immigration Help</h1>
+         <div class="medium-8 columns no-padding show-for-medium-up">
+            <p class="t-epsilon t-serif c-white">Enter details about language and immigration status, and we'll show options for immigration assistance.</p>
+          </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="row margin-bottom--2x">
+  <div class="medium-6 medium-centered columns">
+  <div class="app-card form-card">
+  <section class="question" id="question-resident">
+
+    <div>
+      <header class="app-inner leader border-bottom">
+        <h2 class="app-card_question">Does the person who needs help have a Green Card?</h2>
+      </header>
+   </div>
+
+    <div class="app-inner inset">
+      <div class="radio-group">
+        <p class="radio-block">
+          <input type="radio" name="resident" value="{{ path('entity.node.canonical', {'node': 19}) }}" id="resident-yes">
+          <label class="radio-block_label" for="resident-yes">Yes, they have a Green Card.</label>
+        </p>
+        <p class="radio-block">
+          <input type="radio" name="resident" value="question-detention" id="resident-no">
+          <label class="radio-block_label" for="resident-no">No, they do not have a Green Card</label>
+        </p>
+         <p class="radio-block">
+          <input type="radio" name="resident" value="{{ path('entity.node.canonical', {'node': 24}) }}" id="resident-notsure">
+          <label class="radio-block_label" for="resident-notsure">I'm not sure</label>
+        </p>
+      </div><!--radio-group-->
+    </div><!--app-inner-->
+    <div class="button-pager">
+      <div class="button-pager_row primary">
+        <button class="button primary" data-name="resident" data-next="value">Next</button>
+      </div>
+    </div>
+  </section>
+  
+  <section class="question" id="question-detention">
+
+    <div class="form-back">
+      <a data-href="question-resident" class="lined margin-right"><i class="fa fa-angle-left" aria-hidden="true"></i> Back</a>
+    </div>
+
+    <div>
+      <header class="app-inner leader border-bottom">
+        <h2 class="app-card_question">Are they in detention right now?</h2>
+      </header>
+    </div>
+
+    <div class="app-inner inset">
+      <div class="radio-group">
+        <p class="radio-block">
+          <input type="radio" name="detention" value="{{ path('entity.node.canonical', {'node': 22}) }}" id="detention-today">
+          <label class="radio-block_label" for="detention-today">Yes, they were just detained today in San Francisco</label>
+        </p>
+        <p class="radio-block">
+          <input type="radio" name="detention" value="{{ path('entity.node.canonical', {'node': 23}) }}" id="detention-detained">
+          <label class="radio-block_label" for="detention-detained">Yes, they were detained in San Francisco before today and are still being held</label>
+        </p>
+        <p class="radio-block">
+          <input type="radio" name="detention" value="{{ path('entity.node.canonical', {'node': 24}) }}" id="detention-elsewhere">
+          <label class="radio-block_label" for="detention-elsewhere">Yes, they are currently detained somewhere else outside of San Francisco</label>
+        </p>
+        <p class="radio-block">
+          <input type="radio" name="detention" value="question-case" id="detention-no">
+          <label class="radio-block_label" for="detention-no">No</label>
+        </p>
+        <p class="radio-block">
+          <input type="radio" name="detention" value="{{ path('entity.node.canonical', {'node': 24}) }}" id="detention-notsure">
+          <label class="radio-block_label" for="detention-notsure">I'm not sure</label>
+        </p>
+      </div>
+    </div>
+    
+    <div class="button-pager">
+      <div class="button-pager_row primary">
+        <button class="button primary" data-name="detention" data-error="Choose one of the following" data-next="value">Next</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="question" id="question-case">
+    <div class="form-back">
+      <a data-href="question-detention" class="lined margin-right"><i class="fa fa-angle-left" aria-hidden="true"></i> Back</a>
+    </div>
+    <div>
+      <header class="app-inner leader border-bottom">
+      <h2 class="app-card_question">Do they have an active immigration court case?</h2>
+      <p class="form-note margin-bottom ng-scope">An immigration court case may also be called a deportation case. They may have an active case if they have had contact with immigration officials.</p>
+    </header>
+  </div>
+    <div class="app-inner inset">
+     <div class="radio-group">
+        <p class="radio-block">
+        <input type="radio" name="case" value="{{ path('entity.node.canonical', {'node': 21}) }}" id="case-court">
+        <label class="radio-block_label" for="case-court">Yes, they have an active immigration court case</label>
+        </p>
+        <p class="radio-block">
+        <input type="radio" name="case" value="{{ path('entity.node.canonical', {'node': 24}) }}" id="case-no">
+        <label class="radio-block_label" for="case-no">No</label>
+        </p>
+        <p class="radio-block">
+        <input type="radio" name="case" value="{{ path('entity.node.canonical', {'node': 24}) }}" id="case-notsure">
+        <label class="radio-block_label" for="case-notsure">I'm not sure</label>
+        </p>
+    </div>
+    </div>
+    
+    <div class="button-pager">
+      <div class="button-pager_row primary">
+        <button class="button primary" data-name="case" data-error="Choose one of the following" data-next="value">Next</button>
+      </div>
+    </div>
+  </section>
+
+
+
+  </div>
+  </div>
+  </div>

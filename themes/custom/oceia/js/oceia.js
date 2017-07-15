@@ -49,7 +49,7 @@
 
         if(next){ 
           next = (next=='value' && value !== false)?value:next;
-          if($('#'+next).length){
+          if(next.substring(0,1).match(/[a-zA-Z]/) && $('#'+next).length){
             hide(); $('#'+next).show(); 
           }else{
             if(next){

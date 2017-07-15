@@ -1,7 +1,38 @@
-.question{ display: none; }
+
+
+.question { 
+	display: none; 
+	padding-top: 2rem;
+}
+
 .question:first-child{ display: block; }
 
+.question .radio-block {
+	margin-bottom:2rem;
+}
 
+.question .form-back {
+	padding: 0 0 2rem 2rem;
+}
+
+.question .form-back a {
+	text-decoration: none;
+	font-weight: 400;
+	padding: .25rem .5rem;
+	border: 1px solid #dedee0;
+	border-radius: 5px;
+	text-decoration: none;
+}
+
+#main-content:focus{
+	outline: none;
+}
+
+/* Tooltip styles */
+.ui-tooltip{
+  background: #504F4F;
+  color: #fff;
+}
 
 header .results-header_values {text-transform: none;}
 
@@ -74,17 +105,6 @@ header .call-to-action .columns .button {
 
 .nav-mobile_container.hidden{
   width: 0;
-}
-
-.form-back {
-	padding-left: 1rem;
-    padding-right: 1rem;
-    color: #0077da;
-    font-weight: 400 !important;
-    text-decoration: underline;
-    line-height: 3rem;
-	font-family: "Open Sans", Helvetica, Arial, Verdana, sans-serif;
-	letter-spacing: normal;
 }
 
 .resources-list .label {
@@ -203,14 +223,22 @@ header .call-to-action .columns .button {
 	margin-right: .5rem;
 }
 
-/* Tooltip styles */
-.ui-tooltip{
-  background: #504F4F;
-  color: #fff;
-}
+
 
 @media only screen and (min-width: 48.0625em) { /* 769px medium column break */
 	
+	.form-card {
+		margin-bottom: 10rem;
+	}
+	
+	.app-inner.leader {
+		padding-top: 0;
+	}
+
+	.app-card_question {
+		padding-top: 0;
+	}
+
 	.splash-wells .welcome-block {
 		padding-left: 3rem;
 		padding-right: 3rem;

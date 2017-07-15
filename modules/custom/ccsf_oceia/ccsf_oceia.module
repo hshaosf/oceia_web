@@ -31,3 +31,11 @@ function ccsf_oceia_menu_update($entity){
 function ccsf_oceia_menu_delete($entity){
   \Drupal::entityManager()->getViewBuilder('node')->resetCache();
 }
+
+function ccsf_oceia_page_attachments_alter(array &$attachments) {
+  foreach ($attachments['#attached']['html_head'] as $key => $attachment) {
+    if ($attachment[1] == 'system_meta_generator') {
+      unset($attachments['#attached']['html_head'][$key]);
+    }
+  }
+}
