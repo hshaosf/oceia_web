@@ -1,0 +1,43 @@
+{%
+  set classes = [
+    'row',
+    'node',
+    'node--type-' ~ node.bundle|clean_class,
+    node.isPromoted() ? 'node--promoted',
+    node.isSticky() ? 'node--sticky',
+    not node.isPublished() ? 'node--unpublished',
+    view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
+  ]
+%}
+{{ attach_library('classy/node') }}
+
+<header class="lead-header bg-image bg-gradient">
+  <div class="row">
+    <div class="large-12 columns">
+      <hgroup class="lead-header_group">
+        <h1 class="lead-header_title c-white">{{ label }}</h1>
+        <div class="medium-8 columns no-padding show-for-medium-up">
+          <div class="t-epsilon t-serif c-white">{{content.field_subtitle.0}}</div>
+        </div>
+      </hgroup>
+    </div>
+  </div>
+</header>
+
+<section{{ attributes.addClass(classes) }}>
+  <div class="medium-8 columns">
+
+  {{ title_prefix }}
+  {% if not page %}
+    <h2{{ title_attributes }}>
+      <a href="{{ url }}" rel="bookmark">{{ label }}</a>
+    </h2>
+  {% endif %}
+  {{ title_suffix }}
+
+  <article{{ content_attributes.addClass(['node__content', 'page-content', 'min-height-med']) }}>
+    {{ content.body.0 }}
+  </article>
+
+  </div>
+</section>
