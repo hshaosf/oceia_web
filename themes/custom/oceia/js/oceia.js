@@ -69,18 +69,22 @@
       });
       return this; 
     },
-    checkbox : function(id, item, field){
+    checkbox : function(id, item, field, alert){
       var el = $('#'+id),
         refresh = function(el){
+          $(alert).hide();
           if(boxes.length){
-            var checked = boxes.filter(':checked'),checked_values=[]; 
+            var checked = boxes.filter(':checked'),checked_values=[],match=0; 
             if(checked.length){
               checked.each(function(i,e){checked_values.push($(e).val());})
-              $(item).each(function(i,e){var s=$(e).find(field).filter(function(j,f){return $.inArray($(f).data('value')+'',checked_values)>-1;}); if(s.length){$(e).slideDown();}else{$(e).slideUp();}}); 
+              $(item).each(function(i,e){var s=$(e).find(field).filter(function(j,f){return $.inArray($(f).data('value')+'',checked_values)>-1;}); if(s.length){$(e).slideDown();match+=1;}else{$(e).slideUp();}}); 
             }else{
               $(item).slideDown(); 
             }
-            
+            if(!match){
+              $(alert).show();
+              $(item).slideDown();
+            }
           }
         }
       ; 
@@ -167,7 +171,7 @@
     },
     ready : function(){ 
       console.log('ready');
-      this.menu().tooltip($('.translate-bar')).qs().toggles().gotoSelect().checkbox('results-languages', '.block-item-resources', '.field-languages'); 
+      this.menu().tooltip($('.translate-bar')).qs().toggles().gotoSelect().checkbox('results-languages', '.block-item-resources', '.field-languages', '#results-languages-alert'); 
     }
   }; 
   $(document).ready(function(){oceia.ready()});
