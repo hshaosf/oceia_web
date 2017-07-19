@@ -5,6 +5,7 @@ global-styling:
       assets/css/font-awesome.min.css: {}
       assets/toolkit.css: {}
       assets/oceia.css: {}
+      assets/print.css: {media: print}
 global-scripts:
   version: 1.x
   js:
