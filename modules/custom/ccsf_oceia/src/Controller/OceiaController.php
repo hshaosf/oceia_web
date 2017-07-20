@@ -33,6 +33,17 @@ class OceiaController extends ControllerBase {
     ];
   }
 
+  public static function load_block_view($block_id){
+    $block = \Drupal\block\Entity\Block::load($block_id);
+    if($block && $block->status()){
+      $view = \Drupal::entityTypeManager()
+      ->getViewBuilder('block')
+      ->view($block);
+      return $view; 
+    }
+    return NULL;
+  }
+
   public static function get(...$input){
     $parts = explode('.', $input[0]); 
     if(count($parts) > 1){
