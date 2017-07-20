@@ -32,7 +32,7 @@
              <select id="topic-options" class="" data-width="auto">
           <option value="">Select one</option>
           {% for result in page_vars.results %}
-            <option value="{{result.url}}">{{result.title}}</option>
+            <option value="{{result.url}}">{{result.title_short|default(result.title)}}</option>
           {% endfor %}
              </select>
            <a class="button radius" data-select="topic-options">Choose</a>
