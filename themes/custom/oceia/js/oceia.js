@@ -165,7 +165,9 @@
     },
     tooltip : function(el){
       if(el.length){
-        el.tooltip(); 
+        el.tooltip({
+          close : function(e, u){$('[role=log].ui-helper-hidden-accessible').remove();}
+        }); 
       }
       return this;
     },
