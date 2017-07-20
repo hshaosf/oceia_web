@@ -1,0 +1,37 @@
+{% set view_resources = page_vars.view_resources %}
+{% set oceia_languages = page_vars.oceia_languages %}
+<header class="lead-header">
+  <div class="row">
+  <div class="large-12 columns">
+    <hgroup class="lead-header_group">
+      <h1 class="lead-header_title">Immigration Legal Aid Resources</h1>
+      <div class="medium-8 columns no-padding show-for-medium-up">
+        <p class="t-epsilon t-serif">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+    </hgroup>
+  </div>
+  </div>
+</header>
+
+<section class="results-section border-top">
+  <div class="row">
+    {% include directory ~ '/templates/includes/results-languages.html.twig' %}
+    <div class="small-12 medium-7 columns">
+      <div class="alert-notice alert listing-alert" id="results-languages-alert" style="display:none;" >
+        <p class="t-tiny c-alert margin-bottom t-bold">
+          Sorry, there are currently no agencies supporting that language. 
+        </p>
+        <p class="t-tiny c-alert margin-bottom">Suggestions:</p>
+        <ul class="margin-bottom--2x">
+          <li class="t-tiny c-steel">Do you know someone who can translate one of the supported lanaguage?</li>
+        </ul>
+      </div>
+      <div class="print text-right"><a href="javascript:window.print();"><i class="fa fa-print"></i> Print agency list</a></div>
+      <ul class="resources-list block-list">
+        {% for resource in view_resources %}
+        {{ resource }}
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</section>

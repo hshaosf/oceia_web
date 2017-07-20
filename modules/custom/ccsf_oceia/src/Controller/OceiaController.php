@@ -19,7 +19,11 @@ class OceiaController extends ControllerBase {
     }
     switch($name){
       case 'home' : 
-        $vars['results'] = self::getResults(); 
+        $vars['results'] = self::get('oceia.results'); 
+        break;
+      case 'resources' :
+        $vars['view_resources'] = self::get('oceia.resources');
+        $vars['oceia_languages'] = self::get('oceia.languages');
         break;
     }
     return [
@@ -84,8 +88,12 @@ class OceiaController extends ControllerBase {
     return $lang_terms; 
   }
 
-  protected static function getResources($node){ 
-    $resources = \Drupal::entityTypeManager()->getStorage('node')->loadByProperties(array('type' => 'resources', 'field_results' => $node->id())); 
+  protected static function getResources($node=false){ 
+    $prop = array('type' => 'resources');
+    if($node){
+      $prop['field_results'] = $node->id();
+    }
+    $resources = \Drupal::entityTypeManager()->getStorage('node')->loadByProperties($prop); 
     usort($resources, function($a, $b){ return strcmp($a->get('title')->value, $b->get('title')->value); }); 
     $view_resources = array();
     foreach ($resources as $node) {
