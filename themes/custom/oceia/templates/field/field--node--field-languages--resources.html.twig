@@ -16,7 +16,7 @@
     label_display == 'visually_hidden' ? 'visually-hidden',
   ]
 %}
-<p class="t-tiny c-steel">{{ 'Language Services'|t }}:
+<p class="t-tiny c-steel">{{ 'Languages spoken'|t }}:
     {% for item in items %}
       <span{{ attributes.addClass(classes, 'field__item') }} data-value="{{ item.content['#options'].entity.tid.value }}">{{ item.content['#title'] }}</span>
     {% endfor %}
