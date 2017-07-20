@@ -17,15 +17,7 @@
   <div class="row">
     {% include directory ~ '/templates/includes/results-languages.html.twig' %}
     <div class="small-12 medium-7 columns">
-      <div class="alert-notice alert listing-alert" id="results-languages-alert" style="display:none;" >
-        <p class="t-tiny c-alert margin-bottom t-bold">
-          Sorry, there are currently no agencies supporting that language. 
-        </p>
-        <p class="t-tiny c-alert margin-bottom">Suggestions:</p>
-        <ul class="margin-bottom--2x">
-          <li class="t-tiny c-steel">Do you know someone who can translate one of the supported lanaguage?</li>
-        </ul>
-      </div>
+      {% include directory ~ '/templates/includes/results-languages-alert.html.twig' with {field_title:content.field_title_short.0} %}
       <div class="print text-right"><a href="javascript:window.print();"><i class="fa fa-print"></i> Print agency list</a></div>
       <ul class="resources-list block-list">
         {% for resource in view_resources %}
