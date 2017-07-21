@@ -7,16 +7,14 @@ label: 'DT Staff User'
 weight: -7
 is_admin: null
 permissions:
+  - 'access contextual links'
   - 'administer taxonomy'
   - 'create page content'
   - 'create resources content'
   - 'create result_page content'
   - 'create url aliases'
   - 'delete any resources content'
-  - 'delete any result_page content'
-  - 'delete own page content'
   - 'delete own resources content'
-  - 'delete own result_page content'
   - 'delete terms in language_services'
   - 'edit any page content'
   - 'edit any resources content'
