@@ -7,6 +7,7 @@ function oceia_preprocess(&$variables, $hook)
 
 function oceia_preprocess_node(&$variables) {
   $node = $variables['node'];
+  
   if($node->getType() == 'result_page'){
     
     $variables['view_resources'] = \Drupal\ccsf_oceia\Controller\OceiaController::get('oceia.resources', $node); 

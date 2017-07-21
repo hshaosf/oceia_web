@@ -24,6 +24,7 @@ class OceiaController extends ControllerBase {
       case 'resources' :
         $vars['view_resources'] = self::get('oceia.resources');
         $vars['oceia_languages'] = self::get('oceia.languages');
+        $vars['oceia_results'] = self::get('oceia.results'); 
         break;
     }
     return [

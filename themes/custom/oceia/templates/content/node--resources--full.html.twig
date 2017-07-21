@@ -10,12 +10,15 @@
     view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
   ]
 %}
+{%
+  set show_field_results = (path('<current>')==path('ccsf_oceia.resources')) 
+%}
 {{ attach_library('classy/node') }}
 {% if page %}
 <ul>
 {% endif %}
 <li{{ attributes.addClass(classes) }}>
-  {{ title_prefix }}
+  {{ title_prefix }} 
     <h3{{ title_attributes.addClass(['t-delta','t-sans','margin-bottom--half']) }}>
       <a href="{{ url }}" rel="bookmark" class="a-oil">{{ label }}</a>
     </h3>
@@ -23,6 +26,9 @@
   {% if content.field_languages %}
   <!-- Should not show language services label if no lanugages -->
   {{ content.field_languages }}
+  {% endif %}
+  {% if show_field_results and content.field_results %}
+    {{ content.field_results }}
   {% endif %}
   <div class="a-icon-left d-block">
     <span class="ui-icon ui-static ui-medium i-color ">
