@@ -10,4 +10,10 @@ ccsf_oceia.help :
     _controller: '\Drupal\ccsf_oceia\Controller\OceiaController::content' 
   requirements: 
     _permission: 'access content'
-    
+ccsf_oceia.resources : 
+  path : /help/legal-resources
+  defaults: 
+    _controller: '\Drupal\ccsf_oceia\Controller\OceiaController::content'
+    name: 'resources' 
+  requirements: 
+    _permission: 'access content'    

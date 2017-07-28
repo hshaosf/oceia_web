@@ -1,4 +1,3 @@
-
 <section class="bg-dust padding-top--2x">
   <div class="row">
     <div class="small-12 columns explore-options">
@@ -9,7 +8,11 @@
         {% endfor %}
         
       </ul>
-      <p class="padding-top padding-bottom--2x text-center">You can also see <a href="resources.html">contact information</a> for all San Francisco immigration legal aid organizations.</p>
+      <p class="padding-top padding-bottom--2x text-center">
+      {% if not hide_resources_link %}
+      You can also see <a href="{{ path('ccsf_oceia.resources') }}">contact information</a> for all San Francisco immigration legal aid organizations.
+      {% endif %}
+      </p>
     </div>
   </div>
 </section>

@@ -7,6 +7,7 @@ function oceia_preprocess(&$variables, $hook)
 
 function oceia_preprocess_node(&$variables) {
   $node = $variables['node'];
+  
   if($node->getType() == 'result_page'){
     
     $variables['view_resources'] = \Drupal\ccsf_oceia\Controller\OceiaController::get('oceia.resources', $node); 
@@ -19,14 +20,8 @@ function oceia_preprocess_node(&$variables) {
 
 function oceia_preprocess_region(&$variables) {
   if($variables['region']=='header'){
-    $block = \Drupal\block\Entity\Block::load('oceia_languageswitcher');
-    if($block && $block->status()){
-      $view = \Drupal::entityTypeManager()
-      ->getViewBuilder('block')
-      ->view($block);
-      $variables['block_language'] = $view; 
-    }
-    
+    $variables['block_language'] = \Drupal\ccsf_oceia\Controller\OceiaController::load_block_view('oceia_languageswitcher');
+    $variables['block_messages'] = \Drupal\ccsf_oceia\Controller\OceiaController::load_block_view('oceia_messages');
   }
 }
 

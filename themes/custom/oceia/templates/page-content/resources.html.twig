@@ -1,0 +1,32 @@
+{% set view_resources = page_vars.view_resources %}
+{% set oceia_languages = page_vars.oceia_languages %}
+{% set oceia_results = page_vars.oceia_results %}
+<header class="lead-header">
+  <div class="row">
+  <div class="large-12 columns">
+    <hgroup class="lead-header_group">
+      <h1 class="lead-header_title">Immigration Legal Aid Resources</h1>
+      <div class="medium-8 columns no-padding show-for-medium-up">
+        <p class="t-epsilon t-serif">The non-profits below offer a range of immigration legal aid services. We encourage you to call them first to find out if they can help with a specific need. Initial consultation from these agencies for San Francisco residents is generally low-cost, free, or the fee may be waived.</p>
+      </div>
+    </hgroup>
+  </div>
+  </div>
+</header>
+
+<section class="results-section border-top">
+  <div class="row">
+    {% include directory ~ '/templates/includes/results-languages.html.twig' %}
+    <div class="small-12 medium-7 columns">
+      {% include directory ~ '/templates/includes/results-languages-alert.html.twig' with {field_title:null} %}
+      <div class="print text-right"><a href="javascript:window.print();"><i class="fa fa-print"></i> Print agency list</a></div>
+      <ul class="resources-list block-list">
+        {% for resource in view_resources %}
+        {{ resource }}
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</section>
+
+{% include directory ~ '/templates/includes/results-options.html.twig' with {hide_resources_link:true} %}

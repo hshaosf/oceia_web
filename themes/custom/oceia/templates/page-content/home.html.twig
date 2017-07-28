@@ -26,13 +26,13 @@
           <figure class="block-icon">
             <img alt="Home Icon" src="{{ directory }}/assets/icon-home.png">
             </figure>
-            <h2 class="delta t-serif c-oil">Choose from standard topics</h2>
+            <h2 class="delta t-serif c-oil">Explore Services</h2>
            <p>If you already know which page you're looking for, choose from the topics provided below.</p>
            <div class="form-container clearfix">
              <select id="topic-options" class="" data-width="auto">
           <option value="">Select one</option>
           {% for result in page_vars.results %}
-            <option value="{{result.url}}">{{result.title}}</option>
+            <option value="{{result.url}}">{{result.title_short|default(result.title)}}</option>
           {% endfor %}
              </select>
            <a class="button radius" data-select="topic-options">Choose</a>

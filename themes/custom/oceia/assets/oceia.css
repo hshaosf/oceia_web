@@ -30,8 +30,12 @@
 
 /* Tooltip styles */
 .ui-tooltip{
-  background: #504F4F;
+  background: #30383a;
   color: #fff;
+}
+
+.translate-bar .has-tip{
+	border-bottom: 0;
 }
 
 header .results-header_values {text-transform: none;}
