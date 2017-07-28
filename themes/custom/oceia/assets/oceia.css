@@ -1,4 +1,17 @@
+/* Call-To-Action */
 
+h1.lead-header_title {
+	letter-spacing: normal;
+	text-transform: none;
+	margin-bottom: .25rem;
+}
+
+.lead-header .results-header_values p {
+	display: inline;
+	font-size: 1.25rem;
+	line-height: 1.25rem;
+	font-family: "Open Sans", Helvetica, Arial, Verdana, sans-serif !important;
+}
 
 .question { 
 	display: none; 
