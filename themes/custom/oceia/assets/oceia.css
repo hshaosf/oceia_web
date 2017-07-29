@@ -46,11 +46,15 @@ h1.lead-header_title {
 	margin-bottom: .25rem;
 }
 
+.call-to-action {
+	margin-top: 2rem;
+}
+
 .lead-header h2 {
 	font-family: "Droid Serif", Georgia, Times, serif;
     font-weight: 400;
     margin-top: 0;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
   	padding-bottom: 0;
 }
 
@@ -61,6 +65,9 @@ h1.lead-header_title {
 	font-family: "Open Sans", Helvetica, Arial, Verdana, sans-serif !important;
 	letter-spacing: normal;
 	font-weight: 400;
+	text-transform: none;
+	color: #222;
+	float: left;
 }
     
 header p {
