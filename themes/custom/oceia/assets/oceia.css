@@ -1,17 +1,4 @@
-/* Call-To-Action */
 
-h1.lead-header_title {
-	letter-spacing: normal;
-	text-transform: none;
-	margin-bottom: .25rem;
-}
-
-.lead-header .results-header_values p {
-	display: inline;
-	font-size: 1.25rem;
-	line-height: 1.25rem;
-	font-family: "Open Sans", Helvetica, Arial, Verdana, sans-serif !important;
-}
 
 .question { 
 	display: none; 
@@ -51,58 +38,37 @@ h1.lead-header_title {
 	border-bottom: 0;
 }
 
-header .results-header_values {text-transform: none;}
+/* Header - Call-To-Action */
 
-header p {
-	margin-bottom: .3em !important; 
+h1.lead-header_title {
+	letter-spacing: normal;
+	text-transform: none;
+	margin-bottom: .25rem;
 }
 
+.lead-header h2 {
+	font-family: "Droid Serif", Georgia, Times, serif;
+    font-weight: 400;
+    margin-top: 0;
+    margin-bottom: 1rem;
+  	padding-bottom: 0;
+}
 
-header .results-header_values strong {
-	font-family: "Lato", Helvetica, Arial, Verdana, sans-serif;
-	font-weight: bold;
+.lead-header .results-header_values p {
+	display: inline;
+	font-size: 1.25rem;
+	line-height: 1.25rem;
+	font-family: "Open Sans", Helvetica, Arial, Verdana, sans-serif !important;
+	letter-spacing: normal;
+	font-weight: 400;
+}
+    
+header p {
+	margin-bottom: .3rem !important; 
 }
 
 header .results-header_values .tiny {
 	font-size: 70%;
-}
-
-header .call-to-action {
-	margin: 4rem 0;
-}
-
-header .call-to-action h2 {
-	padding-right: 2em;
-	padding-bottom: 1em;
-}
-
-header .call-to-action .columns .button {
-	width: 60%;
-	margin: 1em 0 4em;
-	display: block;
-}
-
-.splash-wells select {
-	float: left;
-	width: 72%;
-}
-
-.splash-wells .welcome-block h2 {
-	font-size: 1.5rem;
-	line-height: 1.5rem;
-	font-weight: 700;
-}
-
-.splash-wells .welcome-block p {
-	text-align: left;
-	margin-bottom: 2rem;
-}
-
-.splash-wells .form-container .button {
-	width: 25%;
-	float: right;
-	padding: .745rem .5rem;
-	letter-spacing: .1em;
 }
 
 .nav-mobile_container{
