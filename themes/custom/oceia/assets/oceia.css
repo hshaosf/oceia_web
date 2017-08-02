@@ -56,7 +56,23 @@ h1.lead-header_title {
     margin-top: 0;
     margin-bottom: 1.5rem;
   	padding-bottom: 0;
+  	font-size: 1.25rem;
 }
+
+.lead-header h3 {
+	font-weight: bold;
+	margin-bottom: .5rem;
+}
+
+.lead-header ul, .lead-header li {
+	list-style: disc outside none;
+}
+
+.lead-header li {
+	margin-bottom: .5rem;
+}
+
+
 
 .lead-header .results-header_values p {
 	display: inline;
@@ -75,7 +91,8 @@ header p {
 }
 
 header .results-header_values .tiny {
-	font-size: 70%;
+	    font-size: 0.8125rem;
+	    margin-left: .8125rem;
 }
 
 .nav-mobile_container{
