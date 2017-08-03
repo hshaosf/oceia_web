@@ -117,9 +117,8 @@ class OceiaController extends ControllerBase {
   }
 
   public function clear_cache(){
-    if(true){
-      drupal_set_message(t('Caches cleared.'));
-    }
+    drupal_flush_all_caches();
+    drupal_set_message(t('Caches cleared.'));
     $path = 'ccsf_oceia.home'; 
     if (isset($_SERVER['HTTP_REFERER'])) {
      return new \Symfony\Component\HttpFoundation\RedirectResponse($_SERVER['HTTP_REFERER']);   
