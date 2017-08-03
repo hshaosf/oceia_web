@@ -39,3 +39,29 @@ function ccsf_oceia_page_attachments_alter(array &$attachments) {
     }
   }
 }
+
+function ccsf_oceia_toolbar(){
+  $user = \Drupal::currentUser();
+  $roles = $user->getRoles();
+  $items = []; 
+  if(in_array('administrator', $roles) || in_array('dt_staff_user', $roles)){
+    $items['ccsf_oceia_toolbar'] = array(
+      '#type' => 'toolbar_item',
+      'tab' => array(
+        '#type' => 'link',
+        '#title' => t('Clear cache'),
+        '#url' => \Drupal\Core\Url::fromRoute('ccsf_oceia.cc'),
+        '#options' => array(
+          'attributes' => array(
+            'title' => t('Clear cache'),
+            'class' => array('toolbar-icon', 'toolbar-item', 'toolbar-icon-system-admin-config'),
+          ),
+        ),
+      )
+    );
+  }
+  return $items;
+}
+
+
+
