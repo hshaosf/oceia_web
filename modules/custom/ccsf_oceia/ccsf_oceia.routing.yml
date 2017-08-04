@@ -17,3 +17,9 @@ ccsf_oceia.resources :
     name: 'resources' 
   requirements: 
     _permission: 'access content'    
+ccsf_oceia.cc : 
+  path : /admin/config/services/ccsf_oceia_cc
+  defaults: 
+    _controller: '\Drupal\ccsf_oceia\Controller\OceiaController::clear_cache' 
+  requirements: 
+    _permission: 'create page content'
