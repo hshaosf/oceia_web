@@ -1,5 +1,3 @@
-
-
 .question { 
 	display: none; 
 	padding-top: 2rem;
@@ -54,14 +52,14 @@ h1.lead-header_title {
 	font-family: "Droid Serif", Georgia, Times, serif;
     font-weight: 400;
     margin-top: 0;
-    margin-bottom: 1.5rem;
-  	padding-bottom: 0;
-  	font-size: 1.25rem;
+    margin-bottom: 1rem;
+  	font-size: 1.5rem;
 }
 
 .lead-header h3 {
 	font-weight: bold;
 	margin-bottom: .5rem;
+	font-size: 1rem;
 }
 
 .lead-header ul, .lead-header li {
@@ -69,12 +67,15 @@ h1.lead-header_title {
 }
 
 .lead-header li {
-	margin-bottom: .5rem;
+	margin-bottom: .7rem;
+	margin-left: 1.25rem;
 }
 
+.lead-head p {
+	margin-bottom: .7rem !important; 
+}
 
-
-.lead-header .results-header_values p {
+.lead-header .results-header p {
 	display: inline;
 	font-size: 1.25rem;
 	line-height: 1.25rem;
@@ -85,14 +86,29 @@ h1.lead-header_title {
 	color: #222;
 	float: left;
 }
-    
-header p {
-	margin-bottom: .3rem !important; 
+
+.lead-header .results-header p.tiny {
+	font-size: 0.8125rem;
+	margin-left: 1rem;
+	line-height: 1.5rem;
 }
 
-header .results-header_values .tiny {
-	    font-size: 0.8125rem;
-	    margin-left: .8125rem;
+.lead-header p.tiny {
+	font-size: 0.8125rem;
+	line-height: 1.5rem;
+}
+
+.lead-header .c-white {
+	padding: 0 .5rem;
+}
+
+.lead-header .border-bottom {
+	border-bottom: 1px solid #0077da !important;
+	padding-bottom: .5rem;
+}
+
+.lead-header .label.secondary {
+	background: #fff;
 }
 
 .nav-mobile_container{
@@ -116,6 +132,15 @@ header .results-header_values .tiny {
 
 .resources-list .label {
   margin: .125rem;
+}
+
+.home-lower {
+	margin-top: 2rem;
+	margin-bottom: 3rem;
+}
+
+.home-lower h2 {
+	font-size: 1.75rem;
 }
 
 /*--Results Section--*/
