@@ -1,42 +1,15 @@
     <section class="splash-header bg-image">
       <div class="row">
-        <div class="column small-9 medium-7">
-            <header class="hero-header">
-              <h1 class="hero-title c-white t-shadow">Immigration Legal Support</h1>
-              <p class="c-white t-delta p-delta">Working to encourage a safe, engaged and inclusive San&nbsp;Francisco where everyone can contribute and thrive.</p>
+        <div class="medium-9 medium-centered columns">
+            <header class="hero-header text-center">
+              <h1 class="hero-title c-white t-shadow">Find immigration legal help</h1>
+              <div class="row">
+                <div class="medium-centered columns">
+                  <p class="delta t-sans t-shadow c-white">Help immigrants understand their options and find the right lawyer.</p>
+                  <a class="button primary shadow" href="{{ path('ccsf_oceia.help') }}">Find help</a>
+                </div>
+              </div> 
             </header>
-        </div>
-      </div>
-    </section>
-
-    <section class="splash-wells row collapse">
-      <div class="medium-6 columns">
-        <div class="welcome-block block--tall text-center">
-          <figure class="block-icon">
-             <img alt="Phone Icon" src="{{ directory }}/assets/icon-phone.png">
-          </figure>
-          <h2 class="delta t-serif c-oil">Get Customized Assistance</h2>
-          <p>Not sure how to assist with immigration legal help? Answer a few questions and get customized assistance.</p>
-          <a class="button radius primary" href="{{ path('ccsf_oceia.help') }}">Find Help</a>
-        </div>
-      </div>
-    
-      <div class="medium-6 columns">
-        <div class="welcome-block block--tall text-center">
-          <figure class="block-icon">
-            <img alt="Home Icon" src="{{ directory }}/assets/icon-home.png">
-            </figure>
-            <h2 class="delta t-serif c-oil">Explore Services</h2>
-           <p>If you already know which page you're looking for, choose from the topics provided below.</p>
-           <div class="form-container clearfix">
-             <select id="topic-options" class="" data-width="auto">
-          <option value="">Select one</option>
-          {% for result in page_vars.results %}
-            <option value="{{result.url}}">{{result.title_short|default(result.title)}}</option>
-          {% endfor %}
-             </select>
-           <a class="button radius" data-select="topic-options">Choose</a>
-      </div>
         </div>
       </div>
     </section>
