@@ -19,7 +19,7 @@ class OceiaController extends ControllerBase {
     }
     switch($name){
       case 'home' : 
-        $vars['results'] = self::get('oceia.results'); 
+        $vars['oceia_results'] = self::get('oceia.results'); 
         break;
       case 'resources' :
         $vars['view_resources'] = self::get('oceia.resources');

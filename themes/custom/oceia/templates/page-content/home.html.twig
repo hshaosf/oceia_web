@@ -1,3 +1,4 @@
+    {% set oceia_results = page_vars.oceia_results %}
     <section class="splash-header bg-image">
       <div class="row">
         <div class="medium-9 medium-centered columns">
@@ -13,3 +14,4 @@
         </div>
       </div>
     </section>
+    {% include directory ~ '/templates/includes/results-options.html.twig' with {hide_resources_link:true} %}
