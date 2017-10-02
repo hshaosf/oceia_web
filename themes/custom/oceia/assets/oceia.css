@@ -85,6 +85,14 @@ header h1.lead-header_title {
 	margin-top: 2rem;
 }
 
+.splash-header.bg-image{
+	height: 375px;
+}
+
+.splash-text{
+	color: #333;
+}
+
 .lead-header h2 {
 	font-family: "Droid Serif", Georgia, Times, serif;
     font-weight: 400;

@@ -232,7 +232,7 @@
       return this;
     },
     ready : function(){ 
-      console.log('This site is in ALPHA. We\'re just getting started! We\'d love to get your feedback.');
+      console.log('We\'re just getting started! We\'d love to get your feedback.');
       var _t = this;
       _t.menu().tooltip($('.translate-bar')).toggles().gotoSelect().checkbox('results-languages', '.block-item-resources', '.field-languages', '#results-languages-alert'); 
 
