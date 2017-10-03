@@ -1,22 +1,26 @@
 <?php
 
-if(isset($_SERVER['HTTP_HOST']) && $_SERVER['HTTP_HOST'] == 'www.immigrants.sfgov.org') {
-  $redirect = 'https://immigrants.sfgov.org';
-  header('HTTP/1.1 301 Moved Permanently');
-  header('Location: ' . $redirect);
-  exit();
-}
+if (isset($_SERVER['PANTHEON_ENVIRONMENT']) && php_sapi_name() != 'cli' && $_ENV['PANTHEON_ENVIRONMENT'] === 'live') {
 
-if ((!isset($_ENV['PANTHEON_ENVIRONMENT']) || ($_ENV['PANTHEON_ENVIRONMENT'] == 'live')) &&
-    php_sapi_name() != 'cli' && 
-   (!isset($_SERVER['HTTPS']) &&
-    !($_SERVER['HTTPS'] == 'on' || $_SERVER['HTTPS'] == 1) &&
-    !(isset($_SERVER['HTTP_X_FORWARDED_PROTO']) &&
-    $_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https'))) {
-  $redirect = 'https://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
-  header('HTTP/1.1 301 Moved Permanently');
-  header('Location: ' . $redirect);
-  exit();
+  $primary_domain = 'immigrants.sfgov.org';
+
+  if ($_SERVER['HTTP_HOST'] != $primary_domain
+      || !isset($_SERVER['HTTP_X_SSL'])
+      || $_SERVER['HTTP_X_SSL'] != 'ON' ) {
+
+    # Name transaction "redirect" in New Relic for improved reporting (optional)
+    if (extension_loaded('newrelic')) {
+      newrelic_name_transaction("redirect");
+    }
+
+    header('HTTP/1.0 301 Moved Permanently');
+    header('Location: https://'. $primary_domain . $_SERVER['REQUEST_URI']);
+    exit();
+  }
+  // Drupal 8 Trusted Host Settings
+  if (is_array($settings)) {
+    $settings['trusted_host_patterns'] = array('^'. preg_quote($primary_domain) .'$');
+  }
 }
 
 
