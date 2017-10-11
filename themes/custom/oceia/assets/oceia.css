@@ -89,6 +89,10 @@ header h1.lead-header_title {
 	height: 375px;
 }
 
+.splash-header:before {
+	background: none;
+}
+
 .splash-text{
 	color: #333;
 }
