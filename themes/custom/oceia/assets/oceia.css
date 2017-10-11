@@ -87,6 +87,7 @@ header h1.lead-header_title {
 
 .splash-header.bg-image{
 	height: 375px;
+	background-position: center;
 }
 
 .splash-header:before {
